@@ -10,3 +10,38 @@ This project demonstrates how to:
 
 # Build Image
 
+docker build -t hello-flask.
+
+### Run Container
+docker run -p 5000:5000 hello-flask
+Visit:
+http://localhost:5000
+
+---
+
+## ☁ Push to AWS ECR
+
+### Authenticate
+aws ecr get-login-password --region us-east-1 |
+docker login --username AWS --password-stdin ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
+
+### Tag
+docker tag hello-flask:latest ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/hello-flask:latest
+
+### Push
+docker push ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/hello-flask:latest
+
+
+---
+
+## Project Files
+
+- **app.py** – Flask application  
+- **requirements.txt** – Python dependencies  
+- **Dockerfile** – Docker build instructions  
+
+---
+
+
+
+
