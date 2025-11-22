@@ -1,0 +1,6 @@
+hello-flask-docker-ecr/
+│
+├── app.py
+├── requirements.txt
+├── Dockerfile
+└── README.md
